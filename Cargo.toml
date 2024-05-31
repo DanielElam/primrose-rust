@@ -1,0 +1,19 @@
+
+
+[package]
+name = "primrose-rust"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "staticlib"]
+
+[dependencies.wgpu_native]
+package = "wgpu-native"
+git = "https://github.com/PrimroseGames/wgpu-native"
+branch = "master"
+
+[dependencies.taffy]
+package = "ctaffy"
+git = "https://github.com/PrimroseGames/taffy"
+branch = "c-bindings"
