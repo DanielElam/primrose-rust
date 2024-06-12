@@ -29,9 +29,9 @@ pub use ffi::bc7e::*;")
 
         .csharp_dll_name("primrose_rust")
         .csharp_dll_name_if("PRIMROSE_IOS", "__Internal")
-        .csharp_namespace("Primrose.Native")
+        .csharp_namespace("Primrose.Native.bc7e")
         .csharp_entry_point_prefix("csbindgen_")
-        .csharp_class_name("NativeMethods_bc7e")
+        .csharp_class_name("NativeMethods")
         //.method_filter(|x| { x.starts_with("bc7e_") } )
         .generate_to_file("src/bc7e_ffi.rs", "../PrimroseEngine/Engine/Source/Native/Native_bc7e.g.cs")
         .unwrap();
@@ -42,11 +42,11 @@ pub fn add_parley() {
         .input_extern_file("src/parley_ffi.rs")
         .csharp_dll_name("primrose_rust")
         .csharp_dll_name_if("PRIMROSE_IOS", "__Internal")
-        .csharp_namespace("Primrose.Native")
+        .csharp_namespace("Primrose.Native.parley")
         .csharp_entry_point_prefix("csbindgen_")
-        .csharp_class_name("NativeMethods_parley")
+        .csharp_class_name("NativeMethods")
         //.method_filter(|x| { x.starts_with("bc7e_") } )
-        .generate_csharp_file("../PrimroseEngine/Engine/Source/Native/Native_Parley.g.cs")
+        .generate_csharp_file("../PrimroseEngine/Engine/Source/Native/Native_parley.g.cs")
         .unwrap();
 }
 
