@@ -1,5 +1,5 @@
 #pragma once
-#include "../performous/pitch.hh"
+#include "../performous/pitch.h"
 #include "dywapitchtrack.h"
 
 class PtDyWa{

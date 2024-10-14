@@ -68,13 +68,13 @@ fn add_pitchtracker()
         .file("c/pitchtracker/PitchWrapper.cpp")
         .file("c/pitchtracker/Helper.cpp")
         .file("c/pitchtracker/ptAKF.cpp")
-        .file("c/pitchtracker/performous/pitch.cc")
+        .file("c/pitchtracker/performous/pitch.cpp")
         .file("c/pitchtracker/FFT/FFT.cpp")
         .file("c/pitchtracker/FFT/RealFFTf.cpp")
         .file("c/pitchtracker/dywapitchtrack/ptDyWa.cpp")
         .file("c/pitchtracker/dywapitchtrack/dywapitchtrack.cpp")
         .cpp(true)
-        //.cpp_link_stdlib("stdc++")
+        .cpp_link_stdlib("stdc++")
         .compile("pitchtracker");
 
 // csbindgen code, generate both rust ffi and C# dll import
@@ -278,7 +278,7 @@ fn add_linux() {
     add_bytebuffer();
     add_kdtree();
     add_parley();
-    add_pitchtracker();
+    //add_pitchtracker();
     add_bc7e();
 }
 
@@ -318,6 +318,16 @@ fn add_ios() {
     add_pitchtracker();
 }
 
+#[cfg(target_arch = "wasm32")]
+fn add_wasm() {
+    add_ozz();
+    add_ozz_cpp();
+    add_bytebuffer();
+    add_kdtree();
+    add_pitchtracker();
+    add_offsetallocator();
+}
+
 fn main() {
 
     #[cfg(target_os = "windows")]
@@ -331,4 +341,7 @@ fn main() {
 
     #[cfg(target_os = "ios")]
     add_ios();
+
+    #[cfg(target_arch = "wasm32")]
+    add_wasm();
 }

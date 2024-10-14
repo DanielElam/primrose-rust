@@ -1,5 +1,5 @@
 #pragma once
-#include "performous/pitch.hh"
+#include "performous/pitch.h"
 
 #if __STDC__ != 1
 #    define restrict __restrict

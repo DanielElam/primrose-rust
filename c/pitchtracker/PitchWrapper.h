@@ -1,6 +1,6 @@
 #pragma once
 
-#include "performous/pitch.hh"
+#include "performous/pitch.h"
 #include "ptAKF.h"
 #include "dywapitchtrack/ptDyWa.h"
 

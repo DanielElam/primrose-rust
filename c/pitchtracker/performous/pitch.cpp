@@ -1,4 +1,4 @@
-#include "pitch.hh"
+#include "pitch.h"
 
 #include "util.hh"
 #include "libda/fft.hpp"
