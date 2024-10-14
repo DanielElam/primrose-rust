@@ -1,8 +1,8 @@
 #[repr(C)]
 pub struct ByteBuffer {
-    ptr: *mut u8,
-    length: i32,
-    capacity: i32,
+    pub ptr: *mut u8,
+    pub length: i32,
+    pub capacity: i32,
 }
 
 impl ByteBuffer {
@@ -80,4 +80,27 @@ impl ByteBuffer {
 pub unsafe extern "C" fn bytebuffer_free(buffer: *mut ByteBuffer) {
     let buf = Box::from_raw(buffer);
     buf.destroy();
+}
+/*
+
+typedef void* EGLDisplay;
+typedef int EGLenum;
+typedef void* EGLAttrib
+static inline EGLDisplay eglGetPlatformDisplay(EGLenum platform,
+                          void *display_id, const EGLAttrib *attrib_list){
+
+}
+
+ */
+
+#[no_mangle]
+pub unsafe extern "C" fn eglGetPlatformDisplay(platform: u32, display_id: *mut std::ffi::c_void, attrib_list: *const std::ffi::c_void) -> *mut std::ffi::c_void
+{
+    std::ptr::null_mut()
+}
+
+#[no_mangle]
+pub unsafe extern "C" fn main() -> i32
+{
+    0
 }

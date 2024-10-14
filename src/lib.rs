@@ -1,6 +1,7 @@
+#![feature(portable_simd)]
+
 use wgpu_native;
 use taffy;
-use parley;
 
 #[allow(dead_code)]
 #[allow(non_snake_case)]
@@ -31,4 +32,20 @@ mod bytebuffer;
 #[allow(dead_code)]
 #[allow(non_snake_case)]
 #[allow(non_camel_case_types)]
-mod parley_ffi;
+mod pitchtracker;
+
+#[allow(dead_code)]
+#[allow(non_snake_case)]
+#[allow(non_camel_case_types)]
+mod pitchtracker_ffi;
+
+
+#[allow(dead_code)]
+#[allow(non_snake_case)]
+#[allow(non_camel_case_types)]
+mod ozz_ffi;
+
+#[allow(dead_code)]
+#[allow(non_snake_case)]
+#[allow(non_camel_case_types)]
+mod kdtree_ffi;

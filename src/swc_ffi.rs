@@ -1,5 +1,5 @@
 use std::io;
-
+/*
 use swc::{config::IsModule, Compiler, PrintArgs};
 use swc_common::{errors::Handler, source_map::SourceMap, sync::Lrc, Mark, GLOBALS};
 use swc_ecma_ast::EsVersion;
@@ -7,7 +7,7 @@ use swc_ecma_parser::Syntax;
 use swc_ecma_transforms_typescript::strip;
 use swc_ecma_visit::FoldWith;
 
-/*
+
 /// Transforms typescript to javascript. Returns tuple (js string, source map)
 #[no_mangle]
 pub extern "C" fn swc_ts_to_js(filename: &str, ts_code: &str) -> (String, String) {

@@ -6,21 +6,32 @@ version = "0.1.0"
 edition = "2021"
 
 [lib]
-crate-type = ["cdylib", "staticlib"]
+#crate-type = ["staticlib"]
+crate-type = ["staticlib", "cdylib"]
+
+# windows
+#[target.'cfg(windows)'.lib]
+#crate-type = ["staticlib", "cdylib"]
+
+# wasm
+#[target.'cfg(target_arch="wasm32")']
+#crate-type = ["cdylib", "rlib"]
+
+[target.'cfg(not(target_arch="wasm32"))'.dependencies]
+#swc = "0.276.0"
+#swc_common = "0.33.26"
+#swc_ecma_ast = "0.113.7"
+#swc_ecma_parser = "0.144.2"
+#swc_ecma_transforms_typescript = "0.189.1"
+#swc_ecma_visit = "0.99.1"
+ispc = "2.0.1"
 
 [dependencies]
-ispc = "2.0.1"
 peniko = "0.1.1"
 ravif = "0.11.5"
 rgb = "0.8.37"
-swc = "0.276.0"
-swc_common = "0.33.26"
-swc_ecma_ast = "0.113.7"
-swc_ecma_parser = "0.144.2"
-swc_ecma_transforms_typescript = "0.189.1"
-swc_ecma_visit = "0.99.1"
-wasm-bindgen = "0.2.92"
 widestring = "1.1.0"
+wgpu_native = { git = "https://github.com/PrimroseGames/wgpu-native", package = "wgpu-native" }
 
 [build-dependencies]
 csbindgen = "1.9.1"
@@ -28,24 +39,22 @@ bindgen = "0.69.4"
 cc = "1.0"
 ispc = "2.0.1"
 
-[dependencies.wgpu_native]
-package = "wgpu-native"
-git = "https://github.com/PrimroseGames/wgpu-native"
-branch = "master"
-
 [dependencies.taffy]
 package = "ctaffy"
 git = "https://github.com/PrimroseGames/taffy"
 branch = "c-bindings"
 
-[dependencies.parley]
-package = "parley"
-git = "https://github.com/nicoburns/parley"
-branch = "tree-styles"
-features = ["std"]
+[dependencies.ozz-animation-rs]
+package = "ozz-animation-rs"
+git = "https://github.com/PrimroseGames/ozz-animation-rs"
+branch = "master"
 
+[dependencies.glam]
+package = "glam"
+version = "0.25"
+features = ["core-simd", "libm"]
 
-#[dependencies.rapier3d]
-#package = "rapier3d" #"rapier3d-f64"
-#version = "*"
-#features = ["simd-stable", "wasm-bindgen", "parallel"]
+[dependencies.fux_kdtree]
+package = "fux_kdtree"
+git = "https://github.com/fulara/kdtree-rust"
+branch = "master"
