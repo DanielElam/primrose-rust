@@ -76,7 +76,9 @@ fn add_pitchtracker()
         .file("c/pitchtracker/dywapitchtrack/dywapitchtrack.cpp")
         .cpp(true)
         .std("c++20")
-        .cpp_link_stdlib("stdc++")
+        .flag("-stdlib=libc++")
+        .flag_if_supported("-fno-stack-check")
+        //.cpp_link_stdlib("libc++")
         .compile("pitchtracker");
 
 // csbindgen code, generate both rust ffi and C# dll import
