@@ -2,86 +2,76 @@
 
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
-pub struct std_allocator {
+pub struct std___1_allocator {
     pub _address: u8,
 }
-pub type std_allocator__From_primary = u8;
-pub type std_allocator_value_type = u8;
-pub type std_allocator_pointer = u8;
-pub type std_allocator_const_pointer = u8;
-pub type std_allocator_reference = u8;
-pub type std_allocator_const_reference = u8;
-pub type std_allocator_size_type = u64;
-pub type std_allocator_difference_type = u64;
-pub type std_allocator_propagate_on_container_move_assignment = u8;
-pub type std_allocator_is_always_equal = u8;
+pub type std___1_allocator_size_type = u64;
+pub type std___1_allocator_difference_type = u64;
+pub type std___1_allocator_value_type = u8;
+pub type std___1_allocator_propagate_on_container_move_assignment = u8;
+pub type std___1_allocator_is_always_equal = u8;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
-pub struct std_allocator_rebind {
+pub struct std___1_vector {
     pub _address: u8,
 }
-pub type std_allocator_rebind_other = u8;
+pub type std___1_vector___default_allocator_type = u8;
+pub type std___1_vector___self = u8;
+pub type std___1_vector_value_type = u8;
+pub type std___1_vector_allocator_type = u8;
+pub type std___1_vector___alloc_traits = u8;
+pub type std___1_vector_reference = u8;
+pub type std___1_vector_const_reference = u8;
+pub type std___1_vector_size_type = u8;
+pub type std___1_vector_difference_type = u8;
+pub type std___1_vector_pointer = u8;
+pub type std___1_vector_const_pointer = u8;
+pub type std___1_vector_iterator = u8;
+pub type std___1_vector_const_iterator = u8;
+pub type std___1_vector_reverse_iterator = u8;
+pub type std___1_vector_const_reverse_iterator = u8;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
-pub struct std_complex {
+pub struct std___1_vector___destroy_vector {
     pub _address: u8,
 }
-pub type std_complex__Mybase = u8;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
-pub struct std_vector {
+pub struct std___1_vector__ConstructTransaction {
     pub _address: u8,
 }
-pub type std_vector__Alty = u8;
-pub type std_vector__Alty_traits = u8;
-pub type std_vector_value_type = u8;
-pub type std_vector_allocator_type = u8;
-pub type std_vector_pointer = u8;
-pub type std_vector_const_pointer = u8;
-pub type std_vector_reference = u8;
-pub type std_vector_const_reference = u8;
-pub type std_vector_size_type = u8;
-pub type std_vector_difference_type = u8;
-pub type std_vector__Scary_val = u8;
-pub type std_vector_iterator = u8;
-pub type std_vector_const_iterator = u8;
-pub type std_vector_reverse_iterator = u8;
-pub type std_vector_const_reverse_iterator = u8;
-pub const std_vector__Reallocation_policy__At_least: std_vector__Reallocation_policy = 0;
-pub const std_vector__Reallocation_policy__Exactly: std_vector__Reallocation_policy = 0;
-pub type std_vector__Reallocation_policy = ::std::os::raw::c_int;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
-pub struct std_list {
+pub struct std___1_complex {
     pub _address: u8,
 }
-pub type std_list__Alty = u8;
-pub type std_list__Alty_traits = u8;
-pub type std_list__Node = u8;
-pub type std_list__Alnode = u8;
-pub type std_list__Alnode_traits = u8;
-pub type std_list__Nodeptr = u8;
-pub type std_list__Val_types = u8;
-pub type std_list__Scary_val = u8;
-pub type std_list_value_type = u8;
-pub type std_list_allocator_type = u8;
-pub type std_list_size_type = u8;
-pub type std_list_difference_type = u8;
-pub type std_list_pointer = u8;
-pub type std_list_const_pointer = u8;
-pub type std_list_reference = u8;
-pub type std_list_const_reference = u8;
-pub type std_list_iterator = u8;
-pub type std_list_const_iterator = u8;
-pub type std_list__Unchecked_iterator = u8;
-pub type std_list__Unchecked_const_iterator = u8;
-pub type std_list_reverse_iterator = u8;
-pub type std_list_const_reverse_iterator = u8;
+pub type std___1_complex_value_type = u8;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
-pub struct std_list__List_node_remove_op {
+pub struct std___1_list {
     pub _address: u8,
 }
+pub type std___1_list_base = u8;
+pub type std___1_list___node_type = u8;
+pub type std___1_list___node_allocator = u8;
+pub type std___1_list___node_pointer = u8;
+pub type std___1_list___node_alloc_traits = u8;
+pub type std___1_list___node_base = u8;
+pub type std___1_list___node_base_pointer = u8;
+pub type std___1_list___link_pointer = u8;
+pub type std___1_list_value_type = u8;
+pub type std___1_list_allocator_type = u8;
+pub type std___1_list_reference = u8;
+pub type std___1_list_const_reference = u8;
+pub type std___1_list_pointer = u8;
+pub type std___1_list_const_pointer = u8;
+pub type std___1_list_size_type = u8;
+pub type std___1_list_difference_type = u8;
+pub type std___1_list_iterator = u8;
+pub type std___1_list_const_iterator = u8;
+pub type std___1_list_reverse_iterator = u8;
+pub type std___1_list_const_reverse_iterator = u8;
+pub type std___1_list___remove_return_type = u8;
 #[doc = " struct to represent tones"]
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -95,12 +85,12 @@ pub struct Tone {
     #[doc = "< Harmonics' levels"]
     pub harmonics: [f64; 48usize],
     #[doc = "< How many times the tone has been detected in row"]
-    pub age: ::std::os::raw::c_ulonglong,
+    pub age: ::std::os::raw::c_ulong,
 }
 #[doc = "< The maximum number of harmonics tracked"]
-pub const Tone_MAXHARM: ::std::os::raw::c_ulonglong = 48;
+pub const Tone_MAXHARM: ::std::os::raw::c_ulong = 48;
 #[doc = "< The minimum age required for a tone to be output"]
-pub const Tone_MINAGE: ::std::os::raw::c_ulonglong = 2;
+pub const Tone_MINAGE: ::std::os::raw::c_ulong = 2;
 #[test]
 fn bindgen_test_layout_Tone() {
     const UNINIT: ::std::mem::MaybeUninit<Tone> = ::std::mem::MaybeUninit::uninit();
@@ -157,7 +147,7 @@ fn bindgen_test_layout_Tone() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}??0Tone@@QEAA@XZ"]
+    #[link_name = "\u{1}__ZN4ToneC1Ev"]
     pub fn Tone_Tone(this: *mut Tone);
 }
 impl Tone {
@@ -192,14 +182,14 @@ pub struct Analyzer {
 #[doc = " fast fourier transform vector"]
 pub type Analyzer_fft_t = [u64; 3usize];
 #[doc = " list of tones"]
-pub type Analyzer_tones_t = [u64; 2usize];
+pub type Analyzer_tones_t = [u64; 3usize];
 #[test]
 fn bindgen_test_layout_Analyzer() {
     const UNINIT: ::std::mem::MaybeUninit<Analyzer> = ::std::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
         ::std::mem::size_of::<Analyzer>(),
-        32944usize,
+        32952usize,
         concat!("Size of: ", stringify!(Analyzer))
     );
     assert_eq!(
@@ -329,7 +319,7 @@ fn bindgen_test_layout_Analyzer() {
     );
     assert_eq!(
         unsafe { ::std::ptr::addr_of!((*ptr).m_oldfreq) as usize - ptr as usize },
-        32936usize,
+        32944usize,
         concat!(
             "Offset of field: ",
             stringify!(Analyzer),
@@ -340,17 +330,17 @@ fn bindgen_test_layout_Analyzer() {
 }
 extern "C" {
     #[doc = " Call this to process all data input so far."]
-    #[link_name = "\u{1}?process@Analyzer@@QEAAXXZ"]
+    #[link_name = "\u{1}__ZN8Analyzer7processEv"]
     pub fn Analyzer_process(this: *mut Analyzer);
 }
 extern "C" {
     #[doc = " Give data away for mic pass-through"]
-    #[link_name = "\u{1}?output@Analyzer@@QEAA_NPEAM0N@Z"]
+    #[link_name = "\u{1}__ZN8Analyzer6outputEPfS0_d"]
     pub fn Analyzer_output(this: *mut Analyzer, begin: *mut f32, end: *mut f32, rate: f64) -> bool;
 }
 extern "C" {
     #[doc = " constructor"]
-    #[link_name = "\u{1}??0Analyzer@@QEAA@NII@Z"]
+    #[link_name = "\u{1}__ZN8AnalyzerC1Edjj"]
     pub fn Analyzer_Analyzer(this: *mut Analyzer, rate: f64, id: u32, step: ::std::os::raw::c_uint);
 }
 impl Analyzer {
@@ -380,19 +370,19 @@ pub struct PtAKF {
     pub _AKFValues: [f32; 4096usize],
 }
 extern "C" {
-    #[link_name = "\u{1}?_InitCount@PtAKF@@0HA"]
+    #[link_name = "\u{1}__ZN5PtAKF10_InitCountE"]
     pub static mut PtAKF__InitCount: ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}?_SamplesPerPeriodPerTone@PtAKF@@0PEIAMEIA"]
+    #[link_name = "\u{1}__ZN5PtAKF24_SamplesPerPeriodPerToneE"]
     pub static mut PtAKF__SamplesPerPeriodPerTone: *mut f32;
 }
 extern "C" {
-    #[link_name = "\u{1}?_SamplesPerPeriodPerToneFine@PtAKF@@0PEIAMEIA"]
+    #[link_name = "\u{1}__ZN5PtAKF28_SamplesPerPeriodPerToneFineE"]
     pub static mut PtAKF__SamplesPerPeriodPerToneFine: *mut f32;
 }
 extern "C" {
-    #[link_name = "\u{1}?_Window@PtAKF@@0PEIAMEIA"]
+    #[link_name = "\u{1}__ZN5PtAKF7_WindowE"]
     pub static mut PtAKF__Window: *mut f32;
 }
 pub const PtAKF__MaxHalfTone: ::std::os::raw::c_int = 56;
@@ -486,7 +476,7 @@ fn bindgen_test_layout_PtAKF() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}?GetNote@PtAKF@@QEAAHPEIAM0@Z"]
+    #[link_name = "\u{1}__ZN5PtAKF7GetNoteEPfS0_"]
     pub fn PtAKF_GetNote(
         this: *mut PtAKF,
         maxVolume: *mut f32,
@@ -494,15 +484,15 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}?SetVolumeThreshold@PtAKF@@QEAAXM@Z"]
+    #[link_name = "\u{1}__ZN5PtAKF18SetVolumeThresholdEf"]
     pub fn PtAKF_SetVolumeThreshold(this: *mut PtAKF, threshold: f32);
 }
 extern "C" {
-    #[link_name = "\u{1}??0PtAKF@@QEAA@I@Z"]
+    #[link_name = "\u{1}__ZN5PtAKFC1Ej"]
     pub fn PtAKF_PtAKF(this: *mut PtAKF, step: ::std::os::raw::c_uint);
 }
 extern "C" {
-    #[link_name = "\u{1}??1PtAKF@@QEAA@XZ"]
+    #[link_name = "\u{1}__ZN5PtAKFD1Ev"]
     pub fn PtAKF_PtAKF_destructor(this: *mut PtAKF);
 }
 impl PtAKF {
@@ -646,15 +636,15 @@ fn bindgen_test_layout_PtDyWa() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}?FindNote@PtDyWa@@QEAANPEAM@Z"]
+    #[link_name = "\u{1}__ZN6PtDyWa8FindNoteEPf"]
     pub fn PtDyWa_FindNote(this: *mut PtDyWa, maxVolume: *mut f32) -> f64;
 }
 extern "C" {
-    #[link_name = "\u{1}?SetVolumeThreshold@PtDyWa@@QEAAXM@Z"]
+    #[link_name = "\u{1}__ZN6PtDyWa18SetVolumeThresholdEf"]
     pub fn PtDyWa_SetVolumeThreshold(this: *mut PtDyWa, threshold: f32);
 }
 extern "C" {
-    #[link_name = "\u{1}??0PtDyWa@@QEAA@I@Z"]
+    #[link_name = "\u{1}__ZN6PtDyWaC1Ej"]
     pub fn PtDyWa_PtDyWa(this: *mut PtDyWa, step: ::std::os::raw::c_uint);
 }
 impl PtDyWa {
@@ -727,7 +717,7 @@ extern "C" {
     pub fn PtAKF_GetNumHalfTones() -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}PtAKF_SetVolumeThreshold"]
+    #[link_name = "\u{1}_PtAKF_SetVolumeThreshold"]
     pub fn PtAKF_SetVolumeThreshold1(analyzer: *mut PtAKF, threshold: f32);
 }
 extern "C" {
@@ -741,7 +731,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}PtAKF_GetNote"]
+    #[link_name = "\u{1}_PtAKF_GetNote"]
     pub fn PtAKF_GetNote1(
         analyzer: *mut PtAKF,
         maxVolume: *mut f32,
@@ -768,6 +758,6 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}PtDyWa_FindNote"]
+    #[link_name = "\u{1}_PtDyWa_FindNote"]
     pub fn PtDyWa_FindNote1(analyzer: *mut PtDyWa, maxVolume: *mut f32) -> f64;
 }

@@ -1,0 +1,1 @@
+cargo +nightly build --release --target aarch64-apple-ios

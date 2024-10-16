@@ -4,10 +4,10 @@
 #include "ptAKF.h"
 #include "dywapitchtrack/ptDyWa.h"
 
-#ifdef __linux__
-	#define DllExport extern "C"
-#else
+#ifdef _WIN32
 	#define DllExport extern "C" __declspec(dllexport)
+#else
+	#define DllExport extern "C"
 #endif
 
 

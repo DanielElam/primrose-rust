@@ -1,3 +1,4 @@
+#[cfg(any(target_os = "linux", target_os = "macos", target_os = "windows"))]
 use ispc::TargetISA;
 
 fn add_offsetallocator() {
@@ -47,7 +48,7 @@ fn add_pitchtracker()
     // using bindgen, generate binding code
     bindgen::Builder::default()
         //.clang_arg("-x c++")
-        .clang_args(["-x", "c++"])
+        .clang_args(["-x", "c++", "-std=c++20", "-fms-extensions"])
         .header("c/pitchtracker/PitchWrapper.h")
         .opaque_type("std::.*")
         .allowlist_type("Analyzer")
@@ -74,6 +75,7 @@ fn add_pitchtracker()
         .file("c/pitchtracker/dywapitchtrack/ptDyWa.cpp")
         .file("c/pitchtracker/dywapitchtrack/dywapitchtrack.cpp")
         .cpp(true)
+        .std("c++20")
         .cpp_link_stdlib("stdc++")
         .compile("pitchtracker");
 
@@ -152,15 +154,23 @@ fn add_ozz_cpp()
 
 fn add_bc7e()
 {
+    let target_isas = if cfg!(target_os = "macos") {
+        vec![
+            TargetISA::Neoni32x8
+        ]
+    } else {
+        vec![
+            TargetISA::SSE2i32x8,
+            TargetISA::SSE4i32x8,
+            TargetISA::AVX1i32x16,
+            TargetISA::AVX2i32x16,
+            TargetISA::AVX512KNLi32x16,
+            TargetISA::AVX512SKXi32x16,
+        ]
+    };
+
     ispc::Config::new()
-    .target_isas(vec![
-        TargetISA::SSE2i32x8,
-        TargetISA::SSE4i32x8,
-        TargetISA::AVX1i32x16,
-        TargetISA::AVX2i32x16,
-        TargetISA::AVX512KNLi32x16,
-        TargetISA::AVX512SKXi32x16,
-    ])
+    .target_isas(target_isas)
     .out_dir("obj")
     .file("c/bc7e/bc7e.ispc")
     .wno_perf()
@@ -307,17 +317,6 @@ fn add_macos() {
     add_bc7e();
 }
 
-#[cfg(target_os = "ios")]
-fn add_ios() {
-    add_ozz();
-    add_ozz_cpp();
-    add_minimp4();
-    add_bytebuffer();
-    add_kdtree();
-    add_parley();
-    add_pitchtracker();
-}
-
 #[cfg(target_arch = "wasm32")]
 fn add_wasm() {
     add_ozz();
@@ -338,9 +337,6 @@ fn main() {
     
     #[cfg(target_os = "macos")]
     add_macos();
-
-    #[cfg(target_os = "ios")]
-    add_ios();
 
     #[cfg(target_arch = "wasm32")]
     add_wasm();

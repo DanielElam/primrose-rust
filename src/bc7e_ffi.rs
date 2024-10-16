@@ -4,15 +4,13 @@
 use ::std::os::raw::*;
 
 mod ffi {
-    #[cfg(not(target_arch="wasm32"))]
     ispc::ispc_module!(bc7e);
 }
 
-#[cfg(not(target_arch="wasm32"))]
 pub use ffi::bc7e::*;
 
+
 #[no_mangle]
-#[cfg(not(target_arch="wasm32"))]
 pub unsafe extern "C" fn csbindgen_bc7e_compress_block_init(
 
 )
@@ -23,7 +21,6 @@ pub unsafe extern "C" fn csbindgen_bc7e_compress_block_init(
 }
 
 #[no_mangle]
-#[cfg(not(target_arch="wasm32"))]
 pub unsafe extern "C" fn csbindgen_bc7e_compress_block_params_init(
     p: *mut bc7e_compress_block_params,
     perceptual: bool
@@ -36,7 +33,6 @@ pub unsafe extern "C" fn csbindgen_bc7e_compress_block_params_init(
 }
 
 #[no_mangle]
-#[cfg(not(target_arch="wasm32"))]
 pub unsafe extern "C" fn csbindgen_bc7e_compress_block_params_init_basic(
     p: *mut bc7e_compress_block_params,
     perceptual: bool
@@ -49,7 +45,6 @@ pub unsafe extern "C" fn csbindgen_bc7e_compress_block_params_init_basic(
 }
 
 #[no_mangle]
-#[cfg(not(target_arch="wasm32"))]
 pub unsafe extern "C" fn csbindgen_bc7e_compress_block_params_init_fast(
     p: *mut bc7e_compress_block_params,
     perceptual: bool
@@ -62,7 +57,6 @@ pub unsafe extern "C" fn csbindgen_bc7e_compress_block_params_init_fast(
 }
 
 #[no_mangle]
-#[cfg(not(target_arch="wasm32"))]
 pub unsafe extern "C" fn csbindgen_bc7e_compress_block_params_init_slow(
     p: *mut bc7e_compress_block_params,
     perceptual: bool
@@ -75,7 +69,6 @@ pub unsafe extern "C" fn csbindgen_bc7e_compress_block_params_init_slow(
 }
 
 #[no_mangle]
-#[cfg(not(target_arch="wasm32"))]
 pub unsafe extern "C" fn csbindgen_bc7e_compress_block_params_init_slowest(
     p: *mut bc7e_compress_block_params,
     perceptual: bool
@@ -88,7 +81,6 @@ pub unsafe extern "C" fn csbindgen_bc7e_compress_block_params_init_slowest(
 }
 
 #[no_mangle]
-#[cfg(not(target_arch="wasm32"))]
 pub unsafe extern "C" fn csbindgen_bc7e_compress_block_params_init_ultrafast(
     p: *mut bc7e_compress_block_params,
     perceptual: bool
@@ -101,7 +93,6 @@ pub unsafe extern "C" fn csbindgen_bc7e_compress_block_params_init_ultrafast(
 }
 
 #[no_mangle]
-#[cfg(not(target_arch="wasm32"))]
 pub unsafe extern "C" fn csbindgen_bc7e_compress_block_params_init_veryfast(
     p: *mut bc7e_compress_block_params,
     perceptual: bool
@@ -114,7 +105,6 @@ pub unsafe extern "C" fn csbindgen_bc7e_compress_block_params_init_veryfast(
 }
 
 #[no_mangle]
-#[cfg(not(target_arch="wasm32"))]
 pub unsafe extern "C" fn csbindgen_bc7e_compress_block_params_init_veryslow(
     p: *mut bc7e_compress_block_params,
     perceptual: bool
@@ -127,7 +117,6 @@ pub unsafe extern "C" fn csbindgen_bc7e_compress_block_params_init_veryslow(
 }
 
 #[no_mangle]
-#[cfg(not(target_arch="wasm32"))]
 pub unsafe extern "C" fn csbindgen_bc7e_compress_blocks(
     num_blocks: u32,
     pBlocks: *mut u64,
